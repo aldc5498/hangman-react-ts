@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react"
 
 const HEAD = (
     <div style={{
@@ -82,20 +83,24 @@ const LEFT_LEG = (
 )
 const BODY_PARTS = [HEAD, BODY, RIGHT_ARM, LEFT_ARM, RIGHT_LEG, LEFT_LEG]
 
-
+const COLOR = ("black");
 type HangmanDrawingProps = {
     numberOfGuesses: number
 }
 
 export function HangmanDrawing({ numberOfGuesses }: HangmanDrawingProps) {
+
+    const colors = ["red", "blue", "green", "yellow", "orange", "purple"];
+    const [firstColor, secondColor, thirdColor, fourthColor, fifthColor, sixthColor] = colors;
+
     return <div style={{ position: "relative" }}>
         {BODY_PARTS.slice(0, numberOfGuesses)}
-        <div style={{ width: "10px", height: "50px", background: "black", top: 0, right: 0, position: "absolute" }}></div>
+        <div style={{ width: "10px", height: "50px", background: firstColor, top: 0, right: 0, position: "absolute" }}></div>
 
-        <div style={{ width: "200px", height: "10px", background: "black", marginLeft: "120px" }}></div>
-        <div style={{ width: "10px", height: "400px", background: "black", marginLeft: "120px" }}></div>
+        <div style={{ width: "200px", height: "10px", background: fifthColor, marginLeft: "120px" }}></div>
+        <div style={{ width: "10px", height: "400px", background: thirdColor, marginLeft: "120px" }}></div>
 
-        <div style={{ height: "10px", width: "250px", background: "black" }}>
+        <div style={{ height: "10px", width: "250px", background: sixthColor }}>
 
         </div>
     </div>
