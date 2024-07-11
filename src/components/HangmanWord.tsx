@@ -5,7 +5,7 @@ type HangmanWordProps = {
 }
 
 export function HangmanWord({ guessedLetters, wordToGuess, reveal = false }: HangmanWordProps) {
-    console.log(wordToGuess)
+    // console.log(wordToGuess)
 
     return <div style={{
         display: "flex", gap: ".25em", fontSize: "6rem", fontWeight: "bold",
